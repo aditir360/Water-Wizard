@@ -1,0 +1,165 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #caf0f8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    border-radius: 10px;
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1, h2 {
+    text-align: center;
+    color: #03045e;
+    margin-bottom: 20px;
+}
+
+.form-container, .chart-container, .tips-container, .goals-container, .leaderboard-container {
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+}
+
+label {
+    color: #0077b6;
+}
+
+input, button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #00b4d8;
+}
+
+button {
+    background-color: #0077b6;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #03045e;
+}
+
+.tips-container, .goals-container, .leaderboard-container {
+    text-align: center;
+}
+
+#tips-list, #goal-list, #leaderboard {
+    list-style: none;
+    padding: 0;
+}
+
+#tips-list li, #goal-list li, #leaderboard li {
+    background-color: #f1f1f1;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border-left: 5px solid #03045e;
+    position: relative;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+#goal-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#goal-list li button {
+    background-color: #0077b6;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.chart-container {
+    position: relative;
+    height: 300px;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.alert-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#alert-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#alert-info {
+    display: none;
+}
+
+#alert-info.hidden {
+    display: none;
+}
+
+#alert-info.visible {
+    display: block;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+        box-shadow: none;
+        padding: 10px;
+    }
+
+    form, .chart-container {
+        flex-direction: column;
+    }
+}
